@@ -7,9 +7,11 @@
 #include <QTouchDevice>
 #include <QEvent>
 #include <QTouchEvent>
+#include <QList>
 #include <windows.h>
 #include <winuser.h>
 #include <QDebug>
+//#include "globalbits.h"
 #include "zxkb.h"
 
 QT_BEGIN_NAMESPACE
@@ -27,6 +29,7 @@ public:
 private:
     Ui::MainWindow *ui;
     ZXKB *kb;
+    bool HasTouch;
 
 protected:
     virtual bool event(QEvent *event);

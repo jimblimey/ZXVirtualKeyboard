@@ -14,6 +14,7 @@ SOURCES += \
     zxkb.cpp
 
 HEADERS += \
+    globalbits.h \
     mainwindow.h \
     zxkb.h
 

@@ -494,3 +494,11 @@ void ZXKB::DrawSpecialKey(QPainter *p, TZXKeyType ty, int l, int i, int t) {
         p->drawText(l+15,t+33,"SPACE");
     }
 }
+
+void ZXKB::MouseDown(QMouseEvent *event) {
+
+}
+
+void ZXKB::MouseUp(QMouseEvent *event) {
+
+}
