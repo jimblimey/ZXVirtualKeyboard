@@ -345,33 +345,42 @@ ZXKB::ZXKB( QWidget *parent ): QWidget( parent ) {
 
 void ZXKB::paintEvent(QPaintEvent *event) {
     int i,w,h,l;
-
     w = 50;
-    h = 70;
-    l = 2;
+    l = 7;
 
     QPainter painter(this);
+
+    painter.setPen(QPen(Qt::red,10));
+    painter.drawLine(this->width()-130,this->height(),this->width()+10,25);
+    painter.setPen(QPen(Qt::yellow,10));
+    painter.drawLine(this->width()-120,this->height(),this->width()+20,25);
+    painter.setPen(QPen(Qt::green,10));
+    painter.drawLine(this->width()-110,this->height(),this->width()+30,25);
+    painter.setPen(QPen(Qt::cyan,10));
+    painter.drawLine(this->width()-100,this->height(),this->width()+40,25);
+
     painter.setRenderHint(QPainter::Antialiasing, true);
+
     // Numbers
     for(i=0;i<10;i++) {
         DrawNumberKey(&painter, l, i);
         l += w;
     }
     // Top row
-    l = 22;
+    l = 27;
     for(i=10;i<20;i++) {
         DrawStandardKey(&painter, l, i, 80);
         l += w;
     }
     // Middle row
-    l = 32;
+    l = 37;
     for(i=20;i<30;i++) {
         if(FKeys[i].KeyType == zxkEnter) DrawSpecialKey(&painter, zxkEnter, l, i, 140);
         else DrawStandardKey(&painter, l, i, 140);
         l += w;
     }
     // Bottom row
-    l = 2;
+    l = 7;
     h = 195;
     for(i=30;i<40;i++) {
         if(FKeys[i].KeyType == zxkChar) {
