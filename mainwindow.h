@@ -34,7 +34,8 @@ private:
 protected:
     virtual bool event(QEvent *event);
 
-//private slots:
-    //void TestButtonClicked();
+private slots:
+    void KeyDown(UINT key);
+    void KeyUp(UINT key);
 };
 #endif // MAINWINDOW_H

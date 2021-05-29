@@ -495,10 +495,18 @@ void ZXKB::DrawSpecialKey(QPainter *p, TZXKeyType ty, int l, int i, int t) {
     }
 }
 
-void ZXKB::MouseDown(QMouseEvent *event) {
-
+void ZXKB::mousePressEvent(QMouseEvent *event) {
+    for(int i=0;i<40;i++) {
+        if(FKeys[i].ClickRect.contains(event->pos())) {
+            emit KeyDown(FKeys[i].KeyCode);
+        }
+    }
 }
 
-void ZXKB::MouseUp(QMouseEvent *event) {
-
+void ZXKB::mouseReleaseEvent(QMouseEvent *event) {
+    for(int i=0;i<40;i++) {
+        if(FKeys[i].ClickRect.contains(event->pos())) {
+            emit KeyUp(FKeys[i].KeyCode);
+        }
+    }
 }

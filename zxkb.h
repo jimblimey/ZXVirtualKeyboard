@@ -7,15 +7,6 @@
 #include "globalbits.h"
 #include <QDebug>
 
-UINT sendkeypress(UINT key, int keyup) {
-    INPUT inputs[1] = {};
-    inputs[0].type = INPUT_KEYBOARD;
-    inputs[0].ki.wVk = key;
-    if(keyup == KEYEVENTF_KEYUP) inputs[0].ki.dwFlags = KEYEVENTF_KEYUP;
-    UINT uSent = SendInput(ARRAYSIZE(inputs), inputs, sizeof(INPUT));
-    return uSent;
-}
-
 class ZXKB : public QWidget {
     Q_OBJECT
 
@@ -27,13 +18,16 @@ private:
     void DrawNumberKey(QPainter *p, int l, int i);
     void DrawStandardKey(QPainter *p, int l, int i, int t);
     void DrawSpecialKey(QPainter *p, TZXKeyType ty, int l, int i, int t);
-    //QLabel *test;
 
 protected:
     void paintEvent(QPaintEvent *event);
+    void mousePressEvent(QMouseEvent *event);
+    void mouseReleaseEvent(QMouseEvent *event);
+
+signals:
+    void KeyDown(UINT key);
+    void KeyUp(UINT key);
 
 private slots:
-    void MouseDown(QMouseEvent *event);
-    void MouseUp(QMouseEvent *event);
 
 };

@@ -6,6 +6,7 @@
 #include <QString>
 #include <QRect>
 
+// No idea why these don't exist
 const UINT VK_0 = 48;
 const UINT VK_1 = 49;
 const UINT VK_2 = 50;
