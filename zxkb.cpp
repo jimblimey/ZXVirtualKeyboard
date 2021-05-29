@@ -1,14 +1,5 @@
 #include "zxkb.h"
 
-/*UINT sendkeypress(UINT key, int keyup) {
-    INPUT inputs[1] = {};
-    inputs[0].type = INPUT_KEYBOARD;
-    inputs[0].ki.wVk = key;
-    if(keyup == KEYEVENTF_KEYUP) inputs[0].ki.dwFlags = KEYEVENTF_KEYUP;
-    UINT uSent = SendInput(ARRAYSIZE(inputs), inputs, sizeof(INPUT));
-    return uSent;
-}*/
-
 ZXKB::ZXKB( QWidget *parent ): QWidget( parent ) {
 
   FKeys[0].KeyType=zxkNum;

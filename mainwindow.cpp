@@ -18,6 +18,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
     kb = new ZXKB(this);
     this->setCentralWidget(kb);
+    this->setWindowTitle("ZX Spectrum Virtual Keyboard");
 }
 
 MainWindow::~MainWindow() {
@@ -52,14 +53,6 @@ bool MainWindow::event(QEvent *event) {
                         break;
                     }
                 case Qt::TouchPointMoved: {
-                        /*PianoKey* key = getKeyForPos(touchPoint.scenePos());
-                        PianoKey* lastkey = getKeyForPos(touchPoint.lastScenePos());
-                        if ((lastkey != NULL) && (lastkey != key) && lastkey->isPressed()) {
-                            keyOff(lastkey, touchPoint.pressure());
-                        }
-                        if ((key != NULL) && !key->isPressed()) {
-                            keyOn(key, touchPoint.pressure());
-                        }*/
                         break;
                     }
                 default:
