@@ -20,8 +20,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
     HasTouch = (devices.count() > 0);
 
-    qDebug() << HasTouch;
-
     kb = new ZXKB(this);
     this->setCentralWidget(kb);
     this->setWindowTitle("ZX Spectrum Virtual Keyboard");
