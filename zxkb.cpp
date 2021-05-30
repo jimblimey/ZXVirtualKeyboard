@@ -24,7 +24,7 @@ ZXKB::ZXKB( QWidget *parent ): QWidget( parent ) {
   FKeys[2].TopKeyword2="MAGENTA";
   FKeys[2].Symbol = "#";
   FKeys[2].BottomKeyword="LINE";
-  FKeys[1].KeyCode=VK_3;
+  FKeys[2].KeyCode=VK_3;
 
   FKeys[3].KeyType=zxkNum;
   FKeys[3].KeyChar="4";
