@@ -46,7 +46,7 @@ ZXKB::ZXKB( QWidget *parent ): QWidget( parent ) {
   FKeys[5].KeyChar="6";
   FKeys[5].TopKeyword="ò";
   FKeys[5].TopKeyword2="YELLOW";
-  FKeys[5].Symbol = "&&";
+  FKeys[5].Symbol = "&";
   FKeys[5].BottomKeyword="MOVE";
   FKeys[5].KeyCode=VK_6;
 
