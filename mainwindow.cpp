@@ -22,12 +22,13 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
     kb = new ZXKB(this);
     this->setCentralWidget(kb);
-    this->setWindowTitle("ZX Spectrum Virtual Keyboard");
+    this->setWindowTitle((QString)APPNAME + " " + (QString)APPVER);
 
     if(!HasTouch) {
         connect(kb,SIGNAL(KeyUp(UINT)),this,SLOT(KeyUp(UINT)));
         connect(kb,SIGNAL(KeyDown(UINT)),this,SLOT(KeyDown(UINT)));
     }
+
 }
 
 MainWindow::~MainWindow() {

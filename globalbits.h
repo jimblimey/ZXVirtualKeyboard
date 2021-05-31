@@ -6,6 +6,9 @@
 #include <QString>
 #include <QRect>
 
+#define APPVER "0.1a"
+#define APPNAME "ZX Spectrum Virtual Keyboard"
+
 // No idea why these don't exist
 const UINT VK_0 = 48;
 const UINT VK_1 = 49;
