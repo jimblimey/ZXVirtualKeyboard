@@ -16,6 +16,7 @@ public:
     TZXKeys FKeys[40];
 private:    
     void DrawNumberKey(QPainter *p, int l, int i);
+    void DrawGraphic(QPainter *p, int l, int i);
     void DrawStandardKey(QPainter *p, int l, int i, int t);
     void DrawSpecialKey(QPainter *p, TZXKeyType ty, int l, int i, int t);
 

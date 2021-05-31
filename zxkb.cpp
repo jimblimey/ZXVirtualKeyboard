@@ -417,7 +417,6 @@ void ZXKB::DrawNumberKey(QPainter *p, int l, int i) {
     trcolours[9] = Qt::black;
     QFont f("Arial",6);
     QFont bf("Arial",13);
-    QFont rf("Arial",8);
     QFont sf("Wingdings",8);
     p->setFont(f);
     p->setPen(trcolours[i]);
@@ -433,10 +432,42 @@ void ZXKB::DrawNumberKey(QPainter *p, int l, int i) {
     p->setPen(Qt::white);
     p->drawText(l+3,44,FKeys[i].KeyChar);
     p->setPen(Qt::red);
-    p->setFont(rf);
-    p->drawText(l+25,48,FKeys[i].Symbol);
     p->setFont(f);
+    p->drawText(l+28,53,FKeys[i].Symbol);
+    if(i < 8) DrawGraphic(p,l,i);
+    p->setFont(f);
+    p->setPen(Qt::red);
     p->drawText(l+3,70,FKeys[i].BottomKeyword);
+}
+
+void ZXKB::DrawGraphic(QPainter *p, int l, int i) {
+    p->setRenderHint(QPainter::Antialiasing, false);
+    p->setPen(Qt::white);
+    p->setBrush(Qt::white);
+    if(i != 6) {
+        p->drawRect(l+28,28,10,10);
+        p->setBrush(Qt::gray);
+        p->setPen(Qt::gray);
+    }
+    else {
+        p->setBrush(Qt::gray);
+        p->drawRect(l+28,28,10,10);
+        p->setBrush(Qt::white);
+    }
+    switch(i) {
+        case 0: p->drawRect(l+33,29,4,4); break;
+        case 1: p->drawRect(l+29,29,4,4); break;
+        case 2: p->drawRect(l+29,29,8,4); break;
+        case 3: p->drawRect(l+33,33,4,4); break;
+        case 4: p->drawRect(l+29,29,4,8); break;
+        case 5: {
+                    p->drawRect(l+29,29,4,4);
+                    p->drawRect(l+33,33,4,4);
+                    break;
+                }
+        case 6: p->drawRect(l+29,33,4,4);
+    }
+    p->setRenderHint(QPainter::Antialiasing, true);
 }
 
 void ZXKB::DrawStandardKey(QPainter *p, int l, int i, int t) {
