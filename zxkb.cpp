@@ -381,7 +381,7 @@ void ZXKB::paintEvent(QPaintEvent *event) {
     }
     // Bottom row
     l = 7;
-    h = 195;
+    h = 201;
     for(i=30;i<40;i++) {
         if(FKeys[i].KeyType == zxkChar) {
             w = 50;
