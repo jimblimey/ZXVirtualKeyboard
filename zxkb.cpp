@@ -337,10 +337,6 @@ ZXKB::ZXKB( QWidget *parent ): QWidget( parent ) {
   this->setAutoFillBackground(true);
   this->setPalette(pal);
 
-  /*test = new QLabel(this);
-  test->setText(FKeys[4].TopKeyword);
-  QFont f("Wingdings", 10);
-  test->setFont(f);*/
 }
 
 void ZXKB::paintEvent(QPaintEvent *event) {

@@ -10,8 +10,6 @@
 #include <QList>
 #include <windows.h>
 #include <winuser.h>
-#include <QDebug>
-//#include "globalbits.h"
 #include "zxkb.h"
 
 QT_BEGIN_NAMESPACE

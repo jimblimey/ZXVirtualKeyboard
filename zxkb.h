@@ -5,7 +5,6 @@
 #include <windows.h>
 #include <winuser.h>
 #include "globalbits.h"
-#include <QDebug>
 
 class ZXKB : public QWidget {
     Q_OBJECT
