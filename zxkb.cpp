@@ -295,6 +295,7 @@ FKeys[37].KeyCode=VK_M;
 FKeys[38].KeyCode=VK_LCONTROL;
 FKeys[39].KeyCode=VK_SPACE;
 #endif
+#ifdef Q_OS_LINUX
 FKeys[0].KeyCode=KEY_1;
 FKeys[1].KeyCode=KEY_2;
 FKeys[2].KeyCode=KEY_3;
@@ -335,7 +336,6 @@ FKeys[36].KeyCode=KEY_N;
 FKeys[37].KeyCode=KEY_M;
 FKeys[38].KeyCode=KEY_LEFTCTRL;
 FKeys[39].KeyCode=KEY_SPACE;
-#ifdef Q_OS_LINUX
 #endif
 
   QPalette pal = palette();
