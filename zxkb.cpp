@@ -7,90 +7,68 @@ ZXKB::ZXKB( QWidget *parent ): QWidget( parent ) {
   FKeys[0].TopKeyword="EDIT";
   FKeys[0].TopKeyword2="BLUE";
   FKeys[0].Symbol = "!";
-  FKeys[0].BottomKeyword="DEF FN";
-  FKeys[0].KeyCode=VK_1;
-
+  FKeys[0].BottomKeyword="DEF FN";  
   FKeys[1].KeyType=zxkNum;
   FKeys[1].KeyChar="2";
   FKeys[1].TopKeyword="CAPS LOCK";
   FKeys[1].TopKeyword2="RED";
   FKeys[1].Symbol = "@";
   FKeys[1].BottomKeyword="FN";
-  FKeys[1].KeyCode=VK_2;
-
   FKeys[2].KeyType=zxkNum;
   FKeys[2].KeyChar="3";
   FKeys[2].TopKeyword="TRUE VIDEO";
   FKeys[2].TopKeyword2="MAGENTA";
   FKeys[2].Symbol = "#";
   FKeys[2].BottomKeyword="LINE";
-  FKeys[2].KeyCode=VK_3;
-
   FKeys[3].KeyType=zxkNum;
   FKeys[3].KeyChar="4";
   FKeys[3].TopKeyword="INV VIDEO";
   FKeys[3].TopKeyword2="GREEN";
   FKeys[3].Symbol = "$";
   FKeys[3].BottomKeyword="OPEN #";
-  FKeys[3].KeyCode=VK_4;
-
   FKeys[4].KeyType=zxkNum;
   FKeys[4].KeyChar="5";
   FKeys[4].TopKeyword="ï";
   FKeys[4].TopKeyword2="CYAN";
   FKeys[4].Symbol = "%";
   FKeys[4].BottomKeyword="CLOSE #";
-  FKeys[4].KeyCode=VK_5;
-
   FKeys[5].KeyType=zxkNum;
   FKeys[5].KeyChar="6";
   FKeys[5].TopKeyword="ò";
   FKeys[5].TopKeyword2="YELLOW";
   FKeys[5].Symbol = "&";
   FKeys[5].BottomKeyword="MOVE";
-  FKeys[5].KeyCode=VK_6;
-
   FKeys[6].KeyType=zxkNum;
   FKeys[6].KeyChar="7";
   FKeys[6].TopKeyword="ñ";
   FKeys[6].TopKeyword2="WHITE";
   FKeys[6].Symbol = "'";
   FKeys[6].BottomKeyword="ERASE";
-  FKeys[6].KeyCode=VK_7;
-
   FKeys[7].KeyType=zxkNum;
   FKeys[7].KeyChar="8";
   FKeys[7].TopKeyword="ð";
   FKeys[7].TopKeyword2="";
   FKeys[7].Symbol = "(";
   FKeys[7].BottomKeyword="POINT";
-  FKeys[7].KeyCode=VK_8;
-
   FKeys[8].KeyType=zxkNum;
   FKeys[8].KeyChar="9";
   FKeys[8].TopKeyword="GRAPHICS";
   FKeys[8].TopKeyword2="";
   FKeys[8].Symbol = ")";
   FKeys[8].BottomKeyword="CAT";
-  FKeys[8].KeyCode=VK_9;
-
   FKeys[9].KeyType=zxkNum;
   FKeys[9].KeyChar="0";
   FKeys[9].TopKeyword="DELETE";
   FKeys[9].TopKeyword2="BLACK";
   FKeys[9].Symbol = "_";
   FKeys[9].BottomKeyword="FORMAT";
-  FKeys[9].KeyCode=VK_0;
-
   FKeys[10].KeyType=zxkChar;
   FKeys[10].KeyChar="Q";
   FKeys[10].Keyword="PLOT";
   FKeys[10].TopKeyword="SIN";
   FKeys[10].TopKeyword2="";
   FKeys[10].Symbol = "<=";
-  FKeys[10].BottomKeyword="ASN";
-  FKeys[10].KeyCode = VK_Q;
-
+  FKeys[10].BottomKeyword="ASN";  
   FKeys[11].KeyType=zxkChar;
   FKeys[11].KeyChar="W";
   FKeys[11].Keyword="DRAW";
@@ -98,35 +76,27 @@ ZXKB::ZXKB( QWidget *parent ): QWidget( parent ) {
   FKeys[11].TopKeyword2="";
   FKeys[11].Symbol = "<>";
   FKeys[11].BottomKeyword="ACS";
-  FKeys[11].KeyCode = VK_W;
-
   FKeys[12].KeyType=zxkChar;
   FKeys[12].KeyChar="E";
   FKeys[12].Keyword="REM";
   FKeys[12].TopKeyword="TAN";
   FKeys[12].TopKeyword2="";
   FKeys[12].Symbol = ">=";
-  FKeys[12].BottomKeyword="ATN";
-  FKeys[12].KeyCode = VK_E;
-
+  FKeys[12].BottomKeyword="ATN";  
   FKeys[13].KeyType=zxkChar;
   FKeys[13].KeyChar="R";
   FKeys[13].Keyword="RUN";
   FKeys[13].TopKeyword="INT";
   FKeys[13].TopKeyword2="";
   FKeys[13].Symbol = "<";
-  FKeys[13].BottomKeyword="VERIFY";
-  FKeys[13].KeyCode = VK_R;
-
+  FKeys[13].BottomKeyword="VERIFY";  
   FKeys[14].KeyType=zxkChar;
   FKeys[14].KeyChar="T";
   FKeys[14].Keyword="RAND";
   FKeys[14].TopKeyword="RND";
   FKeys[14].TopKeyword2="";
   FKeys[14].Symbol = ">";
-  FKeys[14].BottomKeyword="MERGE";
-  FKeys[14].KeyCode = VK_T;
-
+  FKeys[14].BottomKeyword="MERGE";  
   FKeys[15].KeyType=zxkChar;
   FKeys[15].KeyChar="Y";
   FKeys[15].Keyword="RETURN";
@@ -134,26 +104,20 @@ ZXKB::ZXKB( QWidget *parent ): QWidget( parent ) {
   FKeys[15].TopKeyword2="";
   FKeys[15].Symbol = "AND";
   FKeys[15].BottomKeyword="[";
-  FKeys[15].KeyCode = VK_Y;
-
   FKeys[16].KeyType=zxkChar;
   FKeys[16].KeyChar="U";
   FKeys[16].Keyword="IF";
   FKeys[16].TopKeyword="CHR $";
   FKeys[16].TopKeyword2="";
   FKeys[16].Symbol = "OR";
-  FKeys[16].BottomKeyword="]";
-  FKeys[16].KeyCode = VK_U;
-
+  FKeys[16].BottomKeyword="]";  
   FKeys[17].KeyType=zxkChar;
   FKeys[17].KeyChar="I";
   FKeys[17].Keyword="INPUT";
   FKeys[17].TopKeyword="CODE";
   FKeys[17].TopKeyword2="";
   FKeys[17].Symbol = "AT";
-  FKeys[17].BottomKeyword="IN";
-  FKeys[17].KeyCode = VK_I;
-
+  FKeys[17].BottomKeyword="IN";  
   FKeys[18].KeyType=zxkChar;
   FKeys[18].KeyChar="O";
   FKeys[18].Keyword="POKE";
@@ -161,17 +125,13 @@ ZXKB::ZXKB( QWidget *parent ): QWidget( parent ) {
   FKeys[18].TopKeyword2="";
   FKeys[18].Symbol = ";";
   FKeys[18].BottomKeyword="OUT";
-  FKeys[18].KeyCode = VK_O;
-
   FKeys[19].KeyType=zxkChar;
   FKeys[19].KeyChar="P";
   FKeys[19].Keyword="PRINT";
   FKeys[19].TopKeyword="TAB";
   FKeys[19].TopKeyword2="";
   FKeys[19].Symbol = "\"";
-  FKeys[19].BottomKeyword="©";
-  FKeys[19].KeyCode = VK_P;
-
+  FKeys[19].BottomKeyword="©";  
   FKeys[20].KeyType=zxkChar;
   FKeys[20].KeyChar="A";
   FKeys[20].Keyword="NEW";
@@ -179,17 +139,13 @@ ZXKB::ZXKB( QWidget *parent ): QWidget( parent ) {
   FKeys[20].TopKeyword2="";
   FKeys[20].Symbol = "STOP";
   FKeys[20].BottomKeyword="~";
-  FKeys[20].KeyCode = VK_A;
-
   FKeys[21].KeyType=zxkChar;
   FKeys[21].KeyChar="S";
   FKeys[21].Keyword="SAVE";
   FKeys[21].TopKeyword="RESTORE";
   FKeys[21].TopKeyword2="";
   FKeys[21].Symbol = "NOT";
-  FKeys[21].BottomKeyword="|";
-  FKeys[21].KeyCode = VK_S;
-
+  FKeys[21].BottomKeyword="|";  
   FKeys[22].KeyType=zxkChar;
   FKeys[22].KeyChar="D";
   FKeys[22].Keyword="DIM";
@@ -197,115 +153,87 @@ ZXKB::ZXKB( QWidget *parent ): QWidget( parent ) {
   FKeys[22].TopKeyword2="";
   FKeys[22].Symbol = "STEP";
   FKeys[22].BottomKeyword="\\";
-  FKeys[22].KeyCode = VK_D;
-
   FKeys[23].KeyType=zxkChar;
   FKeys[23].KeyChar="F";
   FKeys[23].Keyword="FOR";
   FKeys[23].TopKeyword="SGN";
   FKeys[23].TopKeyword2="";
   FKeys[23].Symbol = "TO";
-  FKeys[23].BottomKeyword="{";
-  FKeys[23].KeyCode = VK_F;
-
+  FKeys[23].BottomKeyword="{";  
   FKeys[24].KeyType=zxkChar;
   FKeys[24].KeyChar="G";
   FKeys[24].Keyword="GOTO";
   FKeys[24].TopKeyword="ABS";
   FKeys[24].TopKeyword2="";
   FKeys[24].Symbol = "THEN";
-  FKeys[24].BottomKeyword="}";
-  FKeys[24].KeyCode = VK_G;
-
+  FKeys[24].BottomKeyword="}";  
   FKeys[25].KeyType=zxkChar;
   FKeys[25].KeyChar="H";
   FKeys[25].Keyword="GOSUB";
   FKeys[25].TopKeyword="SQR";
   FKeys[25].TopKeyword2="";
   FKeys[25].Symbol = "^";
-  FKeys[25].BottomKeyword="CIRCLE";
-  FKeys[25].KeyCode = VK_H;
-
+  FKeys[25].BottomKeyword="CIRCLE";  
   FKeys[26].KeyType=zxkChar;
   FKeys[26].KeyChar="J";
   FKeys[26].Keyword="LOAD";
   FKeys[26].TopKeyword="VAL";
   FKeys[26].TopKeyword2="";
   FKeys[26].Symbol = "-";
-  FKeys[26].BottomKeyword="VAL $";
-  FKeys[26].KeyCode = VK_J;
-
+  FKeys[26].BottomKeyword="VAL $";  
   FKeys[27].KeyType=zxkChar;
   FKeys[27].KeyChar="K";
   FKeys[27].Keyword="LIST";
   FKeys[27].TopKeyword="LEN";
   FKeys[27].TopKeyword2="";
   FKeys[27].Symbol = "+";
-  FKeys[27].BottomKeyword="SCREEN $";
-  FKeys[27].KeyCode = VK_K;
-
+  FKeys[27].BottomKeyword="SCREEN $";  
   FKeys[28].KeyType=zxkChar;
   FKeys[28].KeyChar="L";
   FKeys[28].Keyword="LET";
   FKeys[28].TopKeyword="USR";
   FKeys[28].TopKeyword2="";
   FKeys[28].Symbol = "=";
-  FKeys[28].BottomKeyword="ATTR";
-  FKeys[28].KeyCode = VK_L;
-
+  FKeys[28].BottomKeyword="ATTR";  
   FKeys[29].KeyType=zxkEnter;
-  FKeys[29].KeyChar="ENTER";
-  FKeys[29].KeyCode = VK_RETURN;
-
+  FKeys[29].KeyChar="ENTER";  
   FKeys[30].KeyType=zxkCS;
-  FKeys[30].KeyChar="CAPS SHIFT";
-  FKeys[30].KeyCode=VK_LSHIFT;
-
+  FKeys[30].KeyChar="CAPS SHIFT";  
   FKeys[31].KeyType=zxkChar;
   FKeys[31].KeyChar="Z";
   FKeys[31].Keyword="COPY";
   FKeys[31].TopKeyword="LN";
   FKeys[31].TopKeyword2="";
   FKeys[31].Symbol = ":";
-  FKeys[31].BottomKeyword="BEEP";
-  FKeys[31].KeyCode=VK_Z;
-
+  FKeys[31].BottomKeyword="BEEP";  
   FKeys[32].KeyType=zxkChar;
   FKeys[32].KeyChar="X";
   FKeys[32].Keyword="CLEAR";
   FKeys[32].TopKeyword="EXP";
   FKeys[32].TopKeyword2="";
   FKeys[32].Symbol = "£";
-  FKeys[32].BottomKeyword="INK";
-  FKeys[32].KeyCode=VK_X;
-
+  FKeys[32].BottomKeyword="INK";  
   FKeys[33].KeyType=zxkChar;
   FKeys[33].KeyChar="C";
   FKeys[33].Keyword="CONT";
   FKeys[33].TopKeyword="LPRINT";
   FKeys[33].TopKeyword2="";
   FKeys[33].Symbol = "?";
-  FKeys[33].BottomKeyword="PAPER";
-  FKeys[33].KeyCode=VK_C;
-
+  FKeys[33].BottomKeyword="PAPER";  
   FKeys[34].KeyType=zxkChar;
   FKeys[34].KeyChar="V";
   FKeys[34].Keyword="CLS";
   FKeys[34].TopKeyword="LLIST";
   FKeys[34].TopKeyword2="";
   FKeys[34].Symbol = "/";
-  FKeys[34].BottomKeyword="FLASH";
-  FKeys[34].KeyCode=VK_V;
-
+  FKeys[34].BottomKeyword="FLASH";  
   FKeys[35].KeyType=zxkChar;
   FKeys[35].KeyChar="B";
   FKeys[35].Keyword="BORDER";
   FKeys[35].TopKeyword="BIN";
   FKeys[35].TopKeyword2="";
   FKeys[35].Symbol = "*";
-  FKeys[35].BottomKeyword="BRIGHT";
-  FKeys[35].KeyCode=VK_B;
-
+  FKeys[35].BottomKeyword="BRIGHT";  
   FKeys[36].KeyType=zxkChar;
   FKeys[36].KeyChar="N";
   FKeys[36].Keyword="NEXT";
@@ -313,8 +241,6 @@ ZXKB::ZXKB( QWidget *parent ): QWidget( parent ) {
   FKeys[36].TopKeyword2="";
   FKeys[36].Symbol = ",";
   FKeys[36].BottomKeyword="OVER";
-  FKeys[36].KeyCode=VK_N;
-
   FKeys[37].KeyType=zxkChar;
   FKeys[37].KeyChar="M";
   FKeys[37].Keyword="PAUSE";
@@ -322,15 +248,95 @@ ZXKB::ZXKB( QWidget *parent ): QWidget( parent ) {
   FKeys[37].TopKeyword2="";
   FKeys[37].Symbol = ".";
   FKeys[37].BottomKeyword="INVERSE";
-  FKeys[37].KeyCode=VK_M;
-
   FKeys[38].KeyType=zxkSS;
-  FKeys[38].KeyChar="SYMBOL SHIFT";
-  FKeys[38].KeyCode=VK_LCONTROL;
-
+  FKeys[38].KeyChar="SYMBOL SHIFT";  
   FKeys[39].KeyType=zxkSpace;
   FKeys[39].KeyChar="SPACE";
-  FKeys[39].KeyCode=VK_SPACE;
+  
+#ifdef Q_OS_WIN
+FKeys[0].KeyCode=VK_1;
+FKeys[1].KeyCode=VK_2;
+FKeys[2].KeyCode=VK_3;
+FKeys[3].KeyCode=VK_4;
+FKeys[4].KeyCode=VK_5;
+FKeys[5].KeyCode=VK_6;
+FKeys[6].KeyCode=VK_7;
+FKeys[7].KeyCode=VK_8;
+FKeys[8].KeyCode=VK_9;
+FKeys[9].KeyCode=VK_0;
+FKeys[10].KeyCode = VK_Q;
+FKeys[11].KeyCode = VK_W;
+FKeys[12].KeyCode = VK_E;
+FKeys[13].KeyCode = VK_R;
+FKeys[14].KeyCode = VK_T;
+FKeys[15].KeyCode = VK_Y;
+FKeys[16].KeyCode = VK_U;
+FKeys[17].KeyCode = VK_I;
+FKeys[18].KeyCode = VK_O;
+FKeys[19].KeyCode = VK_P;
+FKeys[20].KeyCode = VK_A;
+FKeys[21].KeyCode = VK_S;
+FKeys[22].KeyCode = VK_D;
+FKeys[23].KeyCode = VK_F;
+FKeys[24].KeyCode = VK_G;
+FKeys[25].KeyCode = VK_H;
+FKeys[26].KeyCode = VK_J;
+FKeys[27].KeyCode = VK_K;
+FKeys[28].KeyCode = VK_L;
+FKeys[29].KeyCode = VK_RETURN;
+FKeys[30].KeyCode=VK_LSHIFT;
+FKeys[31].KeyCode=VK_Z;
+FKeys[32].KeyCode=VK_X;
+FKeys[33].KeyCode=VK_C;
+FKeys[34].KeyCode=VK_V;
+FKeys[35].KeyCode=VK_B;
+FKeys[36].KeyCode=VK_N;
+FKeys[37].KeyCode=VK_M;
+FKeys[38].KeyCode=VK_LCONTROL;
+FKeys[39].KeyCode=VK_SPACE;
+#endif
+FKeys[0].KeyCode=KEY_1;
+FKeys[1].KeyCode=KEY_2;
+FKeys[2].KeyCode=KEY_3;
+FKeys[3].KeyCode=KEY_4;
+FKeys[4].KeyCode=KEY_5;
+FKeys[5].KeyCode=KEY_6;
+FKeys[6].KeyCode=KEY_7;
+FKeys[7].KeyCode=KEY_8;
+FKeys[8].KeyCode=KEY_9;
+FKeys[9].KeyCode=KEY_0;
+FKeys[10].KeyCode = KEY_Q;
+FKeys[11].KeyCode = KEY_W;
+FKeys[12].KeyCode = KEY_E;
+FKeys[13].KeyCode = KEY_R;
+FKeys[14].KeyCode = KEY_T;
+FKeys[15].KeyCode = KEY_Y;
+FKeys[16].KeyCode = KEY_U;
+FKeys[17].KeyCode = KEY_I;
+FKeys[18].KeyCode = KEY_O;
+FKeys[19].KeyCode = KEY_P;
+FKeys[20].KeyCode = KEY_A;
+FKeys[21].KeyCode = KEY_S;
+FKeys[22].KeyCode = KEY_D;
+FKeys[23].KeyCode = KEY_F;
+FKeys[24].KeyCode = KEY_G;
+FKeys[25].KeyCode = KEY_H;
+FKeys[26].KeyCode = KEY_J;
+FKeys[27].KeyCode = KEY_K;
+FKeys[28].KeyCode = KEY_L;
+FKeys[29].KeyCode = KEY_ENTER;
+FKeys[30].KeyCode=KEY_LEFTSHIFT;
+FKeys[31].KeyCode=KEY_Z;
+FKeys[32].KeyCode=KEY_X;
+FKeys[33].KeyCode=KEY_C;
+FKeys[34].KeyCode=KEY_V;
+FKeys[35].KeyCode=KEY_B;
+FKeys[36].KeyCode=KEY_N;
+FKeys[37].KeyCode=KEY_M;
+FKeys[38].KeyCode=KEY_LEFTCTRL;
+FKeys[39].KeyCode=KEY_SPACE;
+#ifdef Q_OS_LINUX
+#endif
 
   QPalette pal = palette();
   pal.setColor(QPalette::Background, QColor(26,26,26));

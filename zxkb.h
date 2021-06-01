@@ -2,8 +2,10 @@
 #include <QLabel>
 #include <QPainter>
 #include <QPaintEvent>
+#ifdef Q_OS_WIN
 #include <windows.h>
 #include <winuser.h>
+#endif
 #include "globalbits.h"
 
 class ZXKB : public QWidget {

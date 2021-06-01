@@ -1,14 +1,24 @@
 #ifndef GLOBALBITS_H
 #define GLOBALBITS_H
 
-#include <windows.h>
-#include <winuser.h>
+#include <qsystemdetection.h>
 #include <QString>
 #include <QRect>
+
+#ifdef Q_OS_WIN
+#include <windows.h>
+#include <winuser.h>
+#endif
+#ifdef Q_OS_LINUX
+#include <linux/uinput.h>
+#define UINT uint
+#endif
+
 
 #define APPVER "0.1a"
 #define APPNAME "ZX Spectrum Virtual Keyboard"
 
+#ifdef Q_OS_WIN
 // No idea why these don't exist
 const UINT VK_0 = 48;
 const UINT VK_1 = 49;
@@ -46,6 +56,7 @@ const UINT VK_W = 87;
 const UINT VK_X = 88;
 const UINT VK_Y = 89;
 const UINT VK_Z = 90;
+#endif
 
 enum TZXKeyType {zxkNum, zxkChar, zxkEnter, zxkCS, zxkSS, zxkSpace};
 
