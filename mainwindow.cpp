@@ -62,8 +62,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     this->setWindowTitle((QString)APPNAME + " " + (QString)APPVER);
 
     if(!HasTouch) {
-        connect(kb,SIGNAL(KeyUp(UINT)),this,SLOT(KeyUp(UINT)));
-        connect(kb,SIGNAL(KeyDown(UINT)),this,SLOT(KeyDown(UINT)));
+        connect(kb,&ZXKB::KeyUp,this,&MainWindow::KeyUp);
+        connect(kb,&ZXKB::KeyDown,this,&MainWindow::KeyDown);
     }
 
 }
@@ -117,6 +117,7 @@ void MainWindow::KeyDown(UINT key) {
 #ifdef Q_OS_WIN
     sendkeypress(key,0);
 #endif
+    qDebug() << "Key Down";
 #ifdef Q_OS_LINUX
     sendkeypress(fd, EV_KEY, key, 1);
     sendkeypress(fd, EV_SYN, SYN_REPORT, 0);
