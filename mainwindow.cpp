@@ -13,7 +13,7 @@ UINT sendkeypress(UINT key, int keyup) {
 #endif
 
 #ifdef Q_OS_LINUX
-void sendkeypress(int fd, int type, int code, int val) {
+int sendkeypress(int fd, int type, int code, int val) {
     struct input_event ie;
 
     ie.type = type;
@@ -22,7 +22,8 @@ void sendkeypress(int fd, int type, int code, int val) {
     ie.time.tv_sec = 0;
     ie.time.tv_usec = 0;
 
-    write(fd, &ie, sizeof(ie));
+    int result = write(fd, &ie, sizeof(ie));
+    return result;
 }
 #endif
 
@@ -69,6 +70,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 }
 
 MainWindow::~MainWindow() {
+    //ioctl(fd, UI_DEV_DESTROY);
+    //close(fd);
     delete ui;
 }
 
@@ -117,10 +120,9 @@ void MainWindow::KeyDown(UINT key) {
 #ifdef Q_OS_WIN
     sendkeypress(key,0);
 #endif
-    qDebug() << "Key Down";
 #ifdef Q_OS_LINUX
-    sendkeypress(fd, EV_KEY, key, 1);
-    sendkeypress(fd, EV_SYN, SYN_REPORT, 0);
+//    qDebug() << sendkeypress(fd, EV_KEY, key, 1);
+//    qDebug() << sendkeypress(fd, EV_SYN, SYN_REPORT, 0);
 #endif
 }
 
@@ -129,7 +131,7 @@ void MainWindow::KeyUp(UINT key) {
     sendkeypress(key,KEYEVENTF_KEYUP);
 #endif
 #ifdef Q_OS_LINUX
-    sendkeypress(fd, EV_KEY, key, 0);
-    sendkeypress(fd, EV_SYN, SYN_REPORT, 0);
+//    sendkeypress(fd, EV_KEY, key, 0);
+//    sendkeypress(fd, EV_SYN, SYN_REPORT, 0);
 #endif
 }
