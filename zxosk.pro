@@ -21,6 +21,9 @@ HEADERS += \
 FORMS += \
     mainwindow.ui
 
+RESOURCES += \
+    zxosk.qrc
+
 RC_FILE = zxosk.rc
 
 # Default rules for deployment.

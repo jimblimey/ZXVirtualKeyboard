@@ -35,6 +35,21 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     kb = new ZXKB(this);
     this->setCentralWidget(kb);
 
+    QIcon appicon(":/zxosk.ico");
+
+    trayIcon = new QSystemTrayIcon(this);
+    trayIcon->setIcon(appicon);
+    trayIcon->setVisible(true);
+
+    connect(trayIcon,SIGNAL(activated(QSystemTrayIcon::ActivationReason)),this,SLOT(trayIconActivated(QSystemTrayIcon::ActivationReason)));
+    trayMenu = new QMenu(this);
+    menuRestore = new QAction("Restore",this);
+    connect(menuRestore,SIGNAL(triggered()),this,SLOT(menuRestoreClick()));
+    menuExit = new QAction("Exit",this);
+    connect(menuExit,SIGNAL(triggered()),this,SLOT(menuExitClick()));
+    trayMenu->addAction(menuRestore);
+    trayMenu->addAction(menuExit);
+
 #ifdef Q_OS_LINUX
     // Prepare virtual keyboard
     struct uinput_setup usetup;
@@ -135,3 +150,28 @@ void MainWindow::KeyUp(UINT key) {
 //    sendkeypress(fd, EV_SYN, SYN_REPORT, 0);
 #endif
 }
+
+void MainWindow::trayIconActivated(QSystemTrayIcon::ActivationReason reason) {
+    if(reason == QSystemTrayIcon::DoubleClick) {
+        if( isVisible() ) {
+            hide();
+        }
+        else {
+            show();
+            setWindowState(Qt::WindowActive);
+        }
+    }
+    if(reason == QSystemTrayIcon::Context) {
+        trayMenu->popup(QCursor::pos());
+    }
+}
+
+void MainWindow::menuRestoreClick() {
+    show();
+    setWindowState(Qt::WindowActive);
+}
+
+void MainWindow::menuExitClick() {
+    QApplication::quit();
+}
+

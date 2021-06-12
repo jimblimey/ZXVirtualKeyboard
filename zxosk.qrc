@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>zxosk.ico</file>
+        <file>images/logo_twitter_25px.png</file>
+    </qresource>
+</RCC>

@@ -8,6 +8,9 @@
 #include <QEvent>
 #include <QTouchEvent>
 #include <QList>
+#include <QSystemTrayIcon>
+#include <QMenu>
+#include <QAction>
 #include <QDebug>
 #ifdef Q_OS_WIN
 #include <windows.h>
@@ -37,6 +40,10 @@ public:
 private:
     Ui::MainWindow *ui;
     ZXKB *kb;
+    QSystemTrayIcon *trayIcon;
+    QMenu *trayMenu;
+    QAction *menuRestore;
+    QAction *menuExit;
     bool HasTouch;
     int fd;
 
@@ -46,5 +53,8 @@ protected:
 private slots:
     void KeyDown(UINT key);
     void KeyUp(UINT key);
+    void trayIconActivated(QSystemTrayIcon::ActivationReason reason);
+    void menuRestoreClick();
+    void menuExitClick();
 };
 #endif // MAINWINDOW_H
