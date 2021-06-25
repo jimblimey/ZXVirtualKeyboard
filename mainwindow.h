@@ -11,7 +11,6 @@
 #include <QSystemTrayIcon>
 #include <QMenu>
 #include <QAction>
-#include <QDebug>
 #ifdef Q_OS_WIN
 #include <windows.h>
 #include <winuser.h>

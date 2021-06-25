@@ -25,6 +25,11 @@ int sendkeypress(int fd, int type, int code, int val) {
     int result = write(fd, &ie, sizeof(ie));
     return result;
 }
+
+void closekeyboard(int fd) {
+    ioctl(fd, UI_DEV_DESTROY);
+    close(fd);
+}
 #endif
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow) {
@@ -64,7 +69,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     usetup.id.bustype = BUS_USB;
     usetup.id.vendor = 0xB00B;
     usetup.id.product = 0xA45E;
-    strcpy(usetup.name, "ZXKB");
+    strcpy(usetup.name, "ZX Virtual Keyboard");
     ioctl(fd, UI_DEV_SETUP, &usetup);
     ioctl(fd, UI_DEV_CREATE);
 #endif
@@ -84,9 +89,10 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
 }
 
-MainWindow::~MainWindow() {
-    //ioctl(fd, UI_DEV_DESTROY);
-    //close(fd);
+MainWindow::~MainWindow() {    
+#ifdef Q_OS_LINUX
+    closekeyboard(fd);
+#endif
     delete ui;
 }
 
@@ -136,8 +142,8 @@ void MainWindow::KeyDown(UINT key) {
     sendkeypress(key,0);
 #endif
 #ifdef Q_OS_LINUX
-//    qDebug() << sendkeypress(fd, EV_KEY, key, 1);
-//    qDebug() << sendkeypress(fd, EV_SYN, SYN_REPORT, 0);
+    sendkeypress(fd, EV_KEY, key, 1);
+    sendkeypress(fd, EV_SYN, SYN_REPORT, 0);
 #endif
 }
 
@@ -146,8 +152,8 @@ void MainWindow::KeyUp(UINT key) {
     sendkeypress(key,KEYEVENTF_KEYUP);
 #endif
 #ifdef Q_OS_LINUX
-//    sendkeypress(fd, EV_KEY, key, 0);
-//    sendkeypress(fd, EV_SYN, SYN_REPORT, 0);
+    sendkeypress(fd, EV_KEY, key, 0);
+    sendkeypress(fd, EV_SYN, SYN_REPORT, 0);
 #endif
 }
 
@@ -158,7 +164,7 @@ void MainWindow::trayIconActivated(QSystemTrayIcon::ActivationReason reason) {
         }
         else {
             show();
-            setWindowState(Qt::WindowActive);
+            //setWindowState(Qt::WindowActive);
         }
     }
     if(reason == QSystemTrayIcon::Context) {
@@ -167,8 +173,13 @@ void MainWindow::trayIconActivated(QSystemTrayIcon::ActivationReason reason) {
 }
 
 void MainWindow::menuRestoreClick() {
-    show();
-    setWindowState(Qt::WindowActive);
+    if( isVisible() ) {
+        hide();
+    }
+    else {
+        show();
+        //setWindowState(Qt::WindowActive);
+    }
 }
 
 void MainWindow::menuExitClick() {
